@@ -1,4 +1,4 @@
 #!/bin/sh
 
-gcloud compute instances delete homebase
+gcloud --quiet compute instances delete homebase
 
