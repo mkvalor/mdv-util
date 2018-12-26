@@ -163,7 +163,6 @@ set pastetoggle=<F11>
  
 " Indentation settings for using 4 spaces instead of tabs.
 set tabstop=4
-set softtabstop=4
 set shiftwidth=4
 set expandtab
  
@@ -182,7 +181,7 @@ set expandtab
  
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+"map Y y$
  
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
