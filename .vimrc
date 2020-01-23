@@ -14,22 +14,8 @@
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
- 
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-" ---begin vundle-managed plugins---
-
-" Vundle must be set to manage itself
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'ctrlpvim/ctrlp.vim.git'
-Plugin 'rust-lang/rust.vim'
-" ---end vundle-managed plugins---
-call vundle#end()
+" Put plugin stuff directly below this line
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -162,8 +148,8 @@ set pastetoggle=<F11>
 " Indentation settings according to personal preference.
  
 " Indentation settings for using 4 spaces instead of tabs.
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
  
 " Indentation settings for using hard tabs for indent. Display tabs as
