@@ -1,0 +1,22 @@
+In 6265 the cookie name is still specified as an RFC 2616 token, which means
+you can pick from the alphanums plus:
+
+!#$%&'*+-.^_`|~
+
+In the cookie value it formally bans the (filtered by browsers) control
+characters and (inconsistently-implemented) non-ASCII characters. It retains
+cookie_spec's prohibition on space, comma and semicolon, plus for compat-
+ibility with any poor idiots who actually implemented the earlier RFCs it
+also banned backslash and quotes, other than quotes wrapping the whole value
+(but in that case the quotes are still considered part of the value, not an
+encoding scheme). So that leaves you with the alphanums plus:
+
+!#$%&'()*+-./:<=>?@[]^_`{|}~
+
+In the real world we are still using the original-and-worst Netscape
+cookie_spec, so code that consumes cookies should be prepared to encounter
+pretty much anything, but for code that produces cookies it is advisable to
+stick with the subset in RFC 6265.
+
+From an answer by user bobince on
+https://stackoverflow.com/questions/1969232/what-are-allowed-characters-in-cookies
