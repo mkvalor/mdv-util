@@ -1,19 +1,18 @@
-Starting with vim 8.0, vim will automatically load plugins within a certain
+Starting with vim 8.0, vim supports packages of plugins. A package is a
 directory sub-hive of the vim config directory.  The default vim config dir
 is ~/.vim/  Here's how it works:
 
 $mkdir -p ~/.vim/pack
 
-This will create the base location for the furthur directory structure of
-your desired plugins.  I say "further" here because now you should add
-sub-directories at this location, with names which will describe groups of
-related plugins.  The simplest scenario would be to add just one directory
-that will hold all the plugins you want vim to load when it starts up,
-perhaps called "myplugins".
+This creates the default location where vim expects to find the package dirs.
+Now, you will add your own named package sub-directories at this location,
+with names which will describe groups of related plugins.  The simplest
+package name to use, which would merely hold all the plugins you want vim to
+load, perhaps called "myplugins".
 
 mkdir -p ~/.vim/pack/myplugins
 
-vim will search through all the sub-dirs just below pack/ and process these
+vim will search through all package dirs just below pack/ and process these
 directory hives in its normal fashion for loading plugins.  This means we now
 need a new sub-directory below myplugins/ named "start", if we want any plugins
 to auto-load. (and/or if we want to manually load plugins in vim, we would
