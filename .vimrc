@@ -15,8 +15,6 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
-" Put plugin stuff directly below this line
-
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
@@ -99,7 +97,7 @@ set backspace=indent,eol,start
  
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
+"set autoindent
  
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, it does what most users
