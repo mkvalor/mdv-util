@@ -81,7 +81,7 @@ set hlsearch
 " set nomodeline
  
 " Show right margin
-set colorcolumn=78
+set colorcolumn=81
 "------------------------------------------------------------
 " Usability options {{{1
 "
