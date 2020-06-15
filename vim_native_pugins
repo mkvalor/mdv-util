@@ -1,0 +1,45 @@
+Starting with vim 8.0, vim supports packages of plugins. A package is a
+directory sub-hive of the vim config directory.  The default vim config dir
+is ~/.vim/  Here's how it works:
+
+$mkdir -p ~/.vim/pack
+
+This creates the default location where vim expects to find the package dirs.
+Now, you will add your own named package sub-directories at this location,
+with names which will describe groups of related plugins.  The simplest
+package name to use, which would merely hold all the plugins you want vim to
+load, perhaps called "myplugins".
+
+mkdir -p ~/.vim/pack/myplugins
+
+vim will search through all package dirs just below pack/ and process these
+directory hives in its normal fashion for loading plugins.  This means we now
+need a new sub-directory below myplugins/ named "start", if we want any plugins
+to auto-load. (and/or if we want to manually load plugins in vim, we would
+create a new sub-dir named "opt")
+
+$ mkdir -p ~/.vim/pack/myplugins/start
+
+Once this is in place, you may now begin git cloning and/or downloading and
+unzipping plugin directories you like into the start/ or opt/ directory.  When
+git starts, all the plugin directories in the start/ dir will be loaded.
+
+There is no facility in vim's native plugin support to update the plugins.
+To do that, you would git pull or download/unzip in each specific plugin
+subdirectory.  Obviously, you could make the myplugins/ directory a git repo
+and then manage that separately, giving you the possibility of simply cloning
+that repo (or a copy of it, etc, etc) to the vim config dir in a home dir on
+any machine.
+
+In my case, this can simply become a dir hive within my larger public "utils"
+repo, allowing me to clone 'all my stuff' in one pull and then copy (or create
+a script that copies for me) these things to the places they should go.  Yet -
+maybe its' best not to duplicate the plugin code within my utils repo.  A
+script could perform all the git clone and download/unzip operations at
+run-time.
+
+Appendix A: Organizing The Groups of Plugins
+Perhaps: one dir of plugins that are git-cloned vs another dir that are
+downloaded and unzipped.  Further, you could do this on a language-by-language
+basis for plugins that are language specific, resulting in up to two dirs per
+set of language-specific plugins.
